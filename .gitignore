@@ -2,3 +2,6 @@
 *.pyo
 .idea
 venv
+build
+voicebox.egg*
+dist

@@ -21,11 +21,11 @@ class NgramTests(unittest.TestCase):
 
         self.ngram = Ngram('foo', 1, 1)
 
-        self.ngram.after[0][ngram_after_1.string] = ngram_after_1
-        self.ngram.after[0][ngram_after_2.string] = ngram_after_2
+        self.ngram.after[0][ngram_after_1.token] = ngram_after_1
+        self.ngram.after[0][ngram_after_2.token] = ngram_after_2
 
-        self.ngram.before[0][ngram_after_1.string] = ngram_after_1
-        self.ngram.before[0][ngram_after_2.string] = ngram_after_2
+        self.ngram.before[0][ngram_after_1.token] = ngram_after_1
+        self.ngram.before[0][ngram_after_2.token] = ngram_after_2
 
     def test_get_after__sort_attribute_count(self):
         self.assertEqual(
