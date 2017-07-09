@@ -55,14 +55,13 @@ class Corpus(object):
                                 self.tree[ngram].add_after(word, reach)
 
     def get_sentences(self):
-        """Split text into sentences, lowercase and clean punctuation"""
+        """Split text into sentences, lowercase, and clean punctuation"""
         remove_punctuation_map = dict((ord(char), None) for char in string.punctuation.replace('\'', ''))
         sentences = re.split(r'\n|\. |!|\?', self.text)
 
-        return [(
-                    sentence.decode('utf-8')
-                        .strip('\n')
-                        .translate(remove_punctuation_map)
-                        .lower()
-                        .split()
-                ) for sentence in sentences if sentence]
+        return [(sentence.decode('utf-8')
+                 .strip('\n')
+                 .translate(remove_punctuation_map)
+                 .lower()
+                 .split()
+                 ) for sentence in sentences if sentence]
